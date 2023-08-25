@@ -1,15 +1,16 @@
 package Series;
 
+import java.util.ArrayList;
+
 public class Serie {
     //Atributos
-    private String nombre;
-    private Object temporada;
+    private String nombreSerie;
+    private ArrayList<String> temporadas = new ArrayList<>() ;
 
     //Constructor
 
-    public Serie(String nombre, Object temporada) {
-        this.nombre = nombre;
-        this.temporada = temporada;
+    public Serie(String nombre) {
+        this.nombreSerie = nombre;
     }
 
 
@@ -17,18 +18,23 @@ public class Serie {
     //Getters and Setters
 
     public String getNombre() {
-        return nombre;
+        return nombreSerie;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreSerie = nombre;
     }
 
     public Object getTemporada() {
-        return temporada;
+        return temporadas;
     }
 
-    public void setTemporada(Object temporada) {
-        this.temporada = temporada;
+    public void setTemporada(ArrayList<String> temporada) {
+        this.temporadas = temporada;
+    }
+
+    //Agregar temporada
+    public void agregarTemporada(String nombreTemporada){
+        temporadas.add(nombreTemporada);
     }
 }

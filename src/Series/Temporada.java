@@ -1,32 +1,42 @@
 package Series;
 
+import java.util.ArrayList;
+
 public class Temporada {
     //Atributos
-    private String nombre;
-    private Object episodio;
+    private String nombreTemporada;
+    private ArrayList<String> episodios = new ArrayList<>();
 
     //Constructor
-    public Temporada(String nombre, Object episodio) {
-        this.nombre = nombre;
-        this.episodio = episodio;
+    public Temporada(String nombre) {
+        this.nombreTemporada = nombre;
     }
 
     //Metodos
     //Getters and Setters
 
     public String getNombre() {
-        return nombre;
+        return nombreTemporada;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreTemporada = nombre;
     }
 
     public Object getEpisodio() {
-        return episodio;
+        return episodios;
     }
 
-    public void setEpisodio(Object episodio) {
-        this.episodio = episodio;
+    public void setEpisodio(ArrayList<String> episodio) {
+        this.episodios = episodio;
+    }
+    //Agregar episodios
+    public void agregarEpisodio(String nombreEpisodio){
+        episodios.add(nombreEpisodio);
+    }
+
+    //Calcular cantidad de episodios vistos
+    public int calcularEpisodiosVistos(String nombre){
+        return episodios.size();
     }
 }

@@ -52,5 +52,15 @@ public class Episodio {
         this.calificacion = calificacion;
     }
 
+    //Calificar episodio
+    public void ingresarCalificacion(int calificacion){
+        if(calificacion<0 || (calificacion>=1 && calificacion<=5)){
+            setCalificacion(calificacion);//preguntar si lo paso como cte
+        }
+        else{
+            System.out.println("La calificación ingresada es incorrecta. Por favor vuelva a ingresarla");
+        }
+    }
+
 
 }
