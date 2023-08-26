@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Serie {
     //Atributos
     private String nombreSerie;
-    private ArrayList<String> temporadas = new ArrayList<>() ;
+    private ArrayList<Temporada> temporadas = new ArrayList<>() ;
 
     //Constructor
 
@@ -29,12 +29,10 @@ public class Serie {
         return temporadas;
     }
 
-    public void setTemporada(ArrayList<String> temporada) {
-        this.temporadas = temporada;
-    }
+
 
     //Agregar temporada
-    public void agregarTemporada(String nombreTemporada){
-        temporadas.add(nombreTemporada);
+    public void agregarTemporada(Temporada temporada){
+        temporadas.add(temporada);
     }
 }

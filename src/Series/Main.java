@@ -10,22 +10,29 @@ public class Main {
                 "Una bruja con perros", true, 4);
 
         //Creo el objeto temporada
-        Temporada temporada = new Temporada("Temporada 1");
-
+        Temporada temporada1 = new Temporada("Temporada 1");
+        Temporada temporada2 = new Temporada("Temporada 2");
         //creo el objeto serie
         Serie serie = new Serie("Dark");
 
-        //Agregar temporadas a la serie
-        serie.agregarTemporada("Temporada 1");
-        serie.agregarTemporada("Temporada 2");
-
         //Agregar episodios a la temporada
-        temporada.agregarEpisodio("Episodio 1");
-        temporada.agregarEpisodio("Episodio 2");
-        temporada.agregarEpisodio("Episodio 3");
+        temporada1.agregarEpisodio(episodio1);
+        temporada1.agregarEpisodio(episodio2);
+
+        //Agregar temporadas a la serie
+        serie.agregarTemporada(temporada1);
+        serie.agregarTemporada(temporada2);
+
+
+
+
+        //Calificar pelicula
+        System.out.println(episodio1.ingresarCalificacion(2)? "Se ha calificado correctamente. Calificacion="+episodio1.getCalificacion():
+                "La calificacion ingresada es incorrecta.");
+
 
         //Imprimir la cantidad de episodios de una temporada
-        System.out.println(temporada.calcularEpisodiosVistos("Dark"));
+        System.out.println("La temporada tiene "+temporada1.calcularEpisodiosVistos() +" episodios");
 
     }
 }

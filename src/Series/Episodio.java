@@ -7,6 +7,10 @@ public class Episodio {
     private String descripcion;
     private boolean flag;
     private int calificacion;
+    private static final int LIMITCERO = 0;
+    private static final int MINVAL = 1;
+    private static final int MAXVAL = 5;
+
 
     //Constructor
 
@@ -53,14 +57,13 @@ public class Episodio {
     }
 
     //Calificar episodio
-    public void ingresarCalificacion(int calificacion){
-        if(calificacion<0 || (calificacion>=1 && calificacion<=5)){
+    public boolean ingresarCalificacion(int calificacion) {
+        if (calificacion < LIMITCERO || (calificacion >= MINVAL && calificacion <= MAXVAL)) {
             setCalificacion(calificacion);//preguntar si lo paso como cte
-        }
-        else{
-            System.out.println("La calificación ingresada es incorrecta. Por favor vuelva a ingresarla");
+            return true;
+        } else {
+            return false;
         }
     }
-
 
 }

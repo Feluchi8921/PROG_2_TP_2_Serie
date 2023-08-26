@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Temporada {
     //Atributos
     private String nombreTemporada;
-    private ArrayList<String> episodios = new ArrayList<>();
+    private ArrayList<Episodio> episodios = new ArrayList<>();
 
     //Constructor
     public Temporada(String nombre) {
@@ -23,20 +23,23 @@ public class Temporada {
         this.nombreTemporada = nombre;
     }
 
-    public Object getEpisodio() {
+    public ArrayList<Episodio> getEpisodios() {
         return episodios;
     }
 
-    public void setEpisodio(ArrayList<String> episodio) {
-        this.episodios = episodio;
-    }
     //Agregar episodios
-    public void agregarEpisodio(String nombreEpisodio){
-        episodios.add(nombreEpisodio);
+    public void agregarEpisodio(Episodio episodio){
+        episodios.add(episodio);
     }
 
     //Calcular cantidad de episodios vistos
-    public int calcularEpisodiosVistos(String nombre){
-        return episodios.size();
+    public int calcularEpisodiosVistos(){
+        int suma = 0;
+        for (Episodio e : episodios){
+            if (e.isFlag()){
+                suma++;
+            }
+        }
+        return suma;
     }
 }
