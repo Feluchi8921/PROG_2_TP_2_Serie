@@ -32,14 +32,25 @@ public class Temporada {
         episodios.add(episodio);
     }
 
-    //Calcular cantidad de episodios vistos
+    //Calcular cantidad de episodios vistos de una temporada
     public int calcularEpisodiosVistos(){
         int suma = 0;
         for (Episodio e : episodios){
-            if (e.isFlag()){
+            if (e.episodioVisto()){
                 suma++;
             }
         }
         return suma;
+    }
+
+    //Calcular el promedio de las calificaciones dadas para una temporada particular
+    public double calcularPromedioCalifTemp(){
+        int suma=0;
+        int cantEpisodios=episodios.size();
+        //recorro el arrayList de episodios
+        for (int i = 0; i < episodios.size(); i++) {
+            suma+=episodios.get(i).getCalificacion();
+                    }
+        return suma/cantEpisodios;
     }
 }

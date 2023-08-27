@@ -5,7 +5,7 @@ public class Episodio {
     //Atributos
     private String titulo;
     private String descripcion;
-    private boolean flag;
+    private boolean visto;
     private int calificacion;
     private static final int LIMITCERO = 0;
     private static final int MINVAL = 1;
@@ -14,10 +14,10 @@ public class Episodio {
 
     //Constructor
 
-    public Episodio(String titulo, String descripcion, boolean flag, int calificacion) {
+    public Episodio(String titulo, String descripcion, boolean visto, int calificacion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.flag = flag;
+        this.visto = visto;
         this.calificacion = calificacion;
     }
 
@@ -40,12 +40,12 @@ public class Episodio {
         this.descripcion = descripcion;
     }
 
-    public boolean isFlag() {
-        return flag;
+    public boolean episodioVisto() {
+        return visto;
     }
 
-    public void setFlag(boolean flag) {
-        this.flag = flag;
+    public void setVisto(boolean visto) {
+        this.visto = visto;
     }
 
     public int getCalificacion() {
